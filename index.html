@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Công Cụ So Sánh Văn Bản DTP</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="dark">
+
+    <!-- LOADING -->
+    <div class="loading-overlay hidden" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+
+        <header>
+
+            <h1>📝 DTP Compare Tool</h1>
+
+            <div style="display:flex; gap:10px;">
+                <button id="layoutToggle">📐</button>
+                <button id="themeToggle">☀️</button>
+            </div>
+
+        </header>
+
+        <div class="editor-grid">
+
+            <div class="panel">
+                <h2>📄 Văn Bản Gốc</h2>
+                <textarea id="source" placeholder="Nhập văn bản gốc..."></textarea>
+            </div>
+
+            <div class="panel">
+                <h2>✏️ Văn Bản Kiểm Tra</h2>
+                <textarea id="target" placeholder="Nhập văn bản cần so sánh..."></textarea>
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button id="compare">🚀 Compare</button>
+            <button id="reset">🗑 Reset</button>
+        </div>
+
+        
+        <div class="panel">
+            <h2>📊 Thống Kê Lỗi</h2>
+
+            <div id="stats">Accuracy: 0%</div>
+
+            <div class="pagination-controls" style="display:flex; align-items:center; justify-content:center; gap:12px; margin-top:12px;">
+                <label for="pageSize" style="color:var(--muted);">Items per page:</label>
+                <select id="pageSize">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+
+            <div class="pagination">
+                <button id="prevPage">⬅ Prev</button>
+                <span id="pageInfo">Page 1 / 1</span>
+                <button id="nextPage">Next ➡</button>
+            </div>
+
+        </div>
+
+        <div class="panel">
+            <h2>📌 Kết Quả</h2>
+            <div id="result"></div>
+        </div>
+        <!-- CONFIRM MODAL -->
+<div id="confirmModal" class="modal hidden">
+    <div class="modal-box">
+        <h3>⚠️ Xác nhận xoá</h3>
+        <p>Bạn có chắc muốn xoá toàn bộ nội dung và kết quả không?</p>
+
+        <div class="modal-actions">
+            <button id="cancelDelete" class="btn-cancel">Huỷ</button>
+            <button id="confirmDelete" class="btn-danger">Xoá</button>
+        </div>
+    </div>
+</div>
+
+
+        <footer>Made by anhthodev 🚀</footer>
+
+    </div>
+
+    <!-- STICKY HEADER ON SCROLL -->
+    <div id="stickyHeader" class="sticky-header hidden">
+        <div class="sticky-content">
+            <a id="logoHome" href="#" class="logo-at">AT</a>
+            <button id="themeToggleSticky" class="theme-toggle">☀️</button>
+            <div class="spacer"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+
